@@ -1,0 +1,233 @@
+* {
+  padding: 15px;
+  margin: 15px; }
+
+.subMenuColor {
+  background-color: green !important; }
+
+/********************
+ ANIDACION - NESTING
+ *******************/
+.h1 {
+  font: normal 24px/1.5 "Open Sans", sans-serif; }
+
+.ul {
+  list-style: none; }
+  .ul .li {
+    padding: 15px;
+    display: inline-block;
+    background-color: #407740; }
+    .ul .li .a {
+      text-decoration: none;
+      font-size: 16px;
+      color: #407740; }
+    .ul .li .a:hover {
+      text-decoration: underline;
+      font-size: 14px;
+      color: #407740; }
+
+.caja {
+  width: 100px;
+  height: 100px;
+  background-color: red;
+  padding: 15px; }
+  .caja .texto {
+    font-size: 20px;
+    color: white;
+    font-family: Arial, sans-serif; }
+
+/************************
+Ejemplo OPERADORES 
+/* OPERACIONES */
+/* 
+suma +
+resta -
+multiplicacion *
+division /
+*/
+.main {
+  width: 1440px;
+  background-color: aqua; }
+  .main .section {
+    width: 720px;
+    background-color: red; }
+    .main .section .article {
+      width: 360px;
+      background-color: #8f348f; }
+      .main .section .article .p {
+        width: 723px;
+        background-color: seagreen; }
+
+/*************************
+ CONDICIONALES
+ *************************/
+p {
+  /*1er condicional*/
+  background-color: aqua; }
+
+/* 2do condicional */
+.claseTexto {
+  color: blue; }
+
+/*****************
+BUCLES
+*******************/
+/* ejemplo 1 */
+h1 {
+  font: 2.5rem; }
+
+h2 {
+  font: 1.25rem; }
+
+h3 {
+  font: 0.83333rem; }
+
+h4 {
+  font: 0.625rem; }
+
+h5 {
+  font: 0.5rem; }
+
+h6 {
+  font: 0.41667rem; }
+
+/****************
+EACH - LISTAS
+*****************/
+.foto_1 {
+  background-image: url("img/foto_1.png"); }
+
+.foto_2 {
+  background-image: url("img/foto_2.png"); }
+
+.foto_3 {
+  background-image: url("img/foto_3.png"); }
+
+.perro {
+  background-image: url("img/perro.png"); }
+
+.delfin {
+  background-image: url("img/delfin.png"); }
+
+/* ejemplo tres */
+.cataratas2 {
+  background-image: url("../../FOTOS/FOTOS_CATARATAS/cataratas2.jpg"); }
+
+.cataratas2 {
+  border: solid 1px #407740; }
+
+.bgdos {
+  background-image: url("../../FOTOS/FOTOS_CATARATAS/bgdos.jpg"); }
+
+.bgdos {
+  border: solid 1px #407740; }
+
+.bgtres {
+  background-image: url("../../FOTOS/FOTOS_CATARATAS/bgtres.jpg"); }
+
+.bgtres {
+  border: solid 1px #407740; }
+
+.bgcuatro {
+  background-image: url("../../FOTOS/FOTOS_CATARATAS/bgcuatro.jpg"); }
+
+.bgcuatro {
+  border: solid 1px #407740; }
+
+.bgcinco {
+  background-image: url("../../FOTOS/FOTOS_CATARATAS/bgcinco.jpg"); }
+
+.bgcinco {
+  border: solid 1px #407740; }
+
+/***************
+MAPS
+***************/
+.btn-twitter {
+  background-color: #55acee;
+  border: #55acee; }
+
+.btn-facebook {
+  background-color: #3a5795;
+  border: #3a5795; }
+
+.btn-mail {
+  background-color: #C25E30;
+  border: #C25E30; }
+
+.btn-instagram {
+  background-color: #8f348f;
+  border: #8f348f; }
+
+.btn-youtube {
+  background-color: red;
+  border: red; }
+
+.btn-snapchat {
+  background-color: yellow;
+  border: yellow; }
+
+.btn-linkedin {
+  background-color: #7aa5ee;
+  border: #7aa5ee; }
+
+/* EXTENDS */
+.redsocial, .redsocial--dos {
+  border: 1px #f00;
+  background-color: #fdd;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  font-size: 15px; }
+
+.redsocial--dos {
+  border: #3a5795; }
+
+/* MIXINS*/
+.caja {
+  width: 500px;
+  height: 200px; }
+
+.caja--dos {
+  width: 700px;
+  height: 400px; }
+
+/* BEM */
+/* BLOQUE = padre*/
+.fondoVerde {
+  background-color: green !important; }
+
+.fondoAzul {
+  background-color: blue !important; }
+
+.fondoCeleste {
+  background-color: deepskyblue !important; }
+
+.fondoRojo {
+  background-color: red !important; }
+
+.fondoNegro {
+  background-color: #0e0d0d !important; }
+
+.borde {
+  border: 5px !important; }
+
+.fondoNegro {
+  background-color: black; }
+
+.fondoNaranja {
+  background-color: orange; }
+
+/* ELEMENTOS = hijo */
+.fondoVerde__chico {
+  background-color: bisque; }
+
+/* MODIFICADOR */
+.fondoVerde--negro {
+  border: solid 10px #e4dada; }
+
+.fondoVerde__chico--negro {
+  border: solid 15px #1a1a1a; }
+
+.centrado {
+  text-align: center; }

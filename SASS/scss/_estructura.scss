@@ -1,0 +1,173 @@
+/*******************
+     Estructura
+ ******************/
+@import "_colores";
+
+/* Titulos */
+
+h1 {
+  color: $colorUno;
+  font-size: 24px;
+  font-family: webfont, sans-serif;
+  font-weight: 700;
+}
+h2 {
+  color: $colorDos;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--color-1);
+}
+h3 {
+  color: $colorTres;
+}
+
+/* menu */
+nav {
+  background-color: $colorTres;
+  width: 100%;
+  padding: 20px;
+  margin: 0;
+  ul {
+    list-style-type: none;
+    li {
+      padding: 25px;
+      text-align: center;
+      a {
+        text-decoration: none;
+        color: $colorCinco;
+        &:hover {
+          background-color: $fondoTres;
+          color: $colorUno;
+        }
+      }
+    }
+  }
+}
+
+/* footer */
+footer {
+  background-color: $colorCinco;
+  color: $colorUno;
+  p {
+    font-size: medium;
+    font-family: sans-serif;
+    a {
+      color: $colorDos;
+    }
+  }
+}
+
+/*************
+operadores
++ suma
+- resta
+/ division
+* multiplicacion
+***************/
+/* anchos */
+main {
+  width: $ancho;
+  section {
+    width: $ancho/2;
+  }
+  #sectionDos {
+    width: ($ancho/2)-80;
+  }
+}
+div {
+  width: $ancho*2;
+}
+
+
+/* Condicionales*/
+/* 
+1er valor == 2do valor / es igual a 
+1er valor != 2do valor / es distinto a 
+1er valor < 2do valor / es menor a 
+1er valor > 2do valor / es mayor a 
+*/
+$seccion: footer; 
+
+p {
+  @if $seccion == section {
+    color: $colorUno;
+  }
+  @else if $seccion == div {
+    color: $colorDos;
+  }
+  @else if $seccion == aside {
+    color: $colorTres;
+  }
+  @else {
+    color: $colorCinco;
+  }
+}
+
+/* BUCLES */
+@for $var from 1 through 6 {
+  // fragmento repite
+  // h#{$var} {
+  //   font-size: 2.5rem/$var;
+  // }
+  .col-#{$var} {
+    width: $ancho/$var;
+  }
+}
+
+/* EACH */
+@each $secciones in header, main, footer  {
+  // bloque repite
+  #{$secciones} {
+    background-image: url("./images/#{$secciones}.jpg");
+  }
+}
+
+/* MAPS*/
+$mapa:(
+    /* clave: valor*/
+    twitter:   #55acee,
+    facebook:  #3a5795,
+    mail:      #C25E30,
+    instagram: rgb(143, 52, 143),
+    youtube:   red,
+    snapchat:  yellow
+);
+//MAPS con each
+@each $nombres, $colorcito in $mapa {
+  // fragmento que repite
+  .btn-#{$nombres} {
+    background-color: $colorcito;
+    border: $colorcito;
+  }
+}
+
+/* EXTENDS */
+.redsocial {
+  border-radius: 5px;
+  width: 100px;
+  height: 50px;
+  padding: 10px;
+  text-align: center;
+  margin: 5px;
+}
+.redsocial--dos {
+    @extend .redsocial;
+    border-radius: 0;
+}
+
+/* MIXINS*/
+@mixin tamanio($ancho, $altura) {
+  // fragmento que se imprime
+  width: $ancho;
+  height: $altura;
+}
+
+.caja{
+  @include tamanio(500px, 250px);
+}
+.caja-2{
+  @include tamanio(800px, 350px);
+}
+.caja-3{
+  @include tamanio(1000px, 150px);
+}

@@ -1,0 +1,23 @@
+// Defino libreria de colores
+
+$colorUno: rgb(45, 113, 177);
+$colorDos: rgb(49, 49, 153);
+$colorTres: rgb(59, 136, 119);
+$colorCuatro: rgb(147, 223, 247);
+$colorCinco: #0e253d;
+
+:root {
+    --color-1: red;
+}
+
+// FONDOS
+$fondoUno: #0074d9;
+$fondoDos: #0c385f;
+$fondoTres: #321241;
+$fondoTres: #b3cbd1;
+
+// Degradados
+$gradUno: linear-gradiente(to bottom right, #643464 40%, #3d3d7e);
+$gradDos: linear-gradiente(to bottom right, #344764 40%, #663d7e);
+$gradTres: linear-gradiente(to bottom right, #540772 40%, #3d3d7e);
+

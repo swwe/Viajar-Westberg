@@ -1,0 +1,2 @@
+SASS: "cd (carpeta de scss)"
+      "npm run watchh-css

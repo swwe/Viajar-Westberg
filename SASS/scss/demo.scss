@@ -1,0 +1,242 @@
+// IMPORTACION
+// importar estilos de bootsrap en SCSS
+//@import "../../bootstrap_scss/scss/bootstrap.scss";
+*{
+    padding: 15px;
+    margin: 15px;
+
+}
+
+.subMenuColor {
+    background-color: green !important;
+}
+
+// VARIABLES GLOBALES
+$verde: #407740; // valor unico
+$verde: red !default; 
+$tituloFuente: normal 24px/1.5 'Open Sans', sans-serif;// multivalor
+
+
+/********************
+ ANIDACION - NESTING
+ *******************/
+ .h1 {
+     font: $tituloFuente;
+ }
+ .ul {
+    list-style: none;
+    .li {
+        padding: 15px;
+        display: inline-block;
+        background-color: $verde;
+        .a {
+            text-decoration: none;
+            font-size: 16px;
+            color: $verde;
+          }
+        .a:hover {
+            text-decoration: underline;
+            font-size: 14px;
+            color: $verde;
+          }
+      }
+   }
+
+.caja {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    padding: 15px;
+    .texto {
+       font-size: 20px;
+       color: white;
+       font-family: Arial, sans-serif;
+   }
+}
+ 
+/************************
+Ejemplo OPERADORES 
+/* OPERACIONES */
+/* 
+suma +
+resta -
+multiplicacion *
+division /
+*/
+$ancho: 720px;
+
+.main {
+    width: $ancho * 2;
+    background-color: aqua;
+    .section {
+        width: $ancho;
+        background-color: red;
+        .article {
+            width: $ancho / 2;
+            background-color: rgb(143, 52, 143);
+            .p {
+                width: ($ancho + 3)  ;
+                background-color: seagreen;
+            }
+        }
+    }
+    
+}
+
+
+/*************************
+ CONDICIONALES
+ *************************/
+// --------------------------------
+//1er valor  ==  2do valor - Es verdadero si igual
+//1er valor  !=  2do valor - Es verdadero si distinto
+//1er valor  <  2do valor - Es verdadero si es menor
+//1er valor  >  2do valor - Es verdadero si es mayor
+
+
+p {
+    /*1er condicional*/
+    @if 1+2  == 3 {
+       background-color: aqua;
+      }
+    }
+
+$mobile: 578px;
+$tablet: 992px;
+$desktop: 1200px;
+/* 2do condicional */
+.claseTexto {
+    @if $ancho > $mobile {
+    color: blue;
+  } @else if $ancho > $tablet {
+    color: red;
+  } @else if $ancho > $desktop {
+    color: green;
+  }
+  @else {
+    color: black;
+  }
+}
+
+/*****************
+BUCLES
+*******************/
+/* ejemplo 1 */
+// @for $var from inicio to/through final
+
+@for $i from 1 through 6 {
+    // bloque repite
+    // #{$var}
+    h#{$i} { 
+        font: 2.5rem / $i;
+   }
+  }
+
+/****************
+EACH - LISTAS
+*****************/
+@each $lista in /*lista*/foto_1, foto_2, foto_3, perro, delfin {
+    // #{$var}
+    .#{$lista} {
+      background-image: url('img/#{$lista}.png');
+    }
+ }
+//  #{$variable} = imprimirme el valor de la variable dinamica
+ /* ejemplo tres */
+ @each $fondos in cataratas2, bgdos, bgtres, bgcuatro, bgcinco {
+    .#{$fondos} {
+      background-image: url('../../FOTOS/FOTOS_CATARATAS/#{$fondos}.jpg');
+    }
+    .#{$fondos} {
+        border: solid 1px $verde;
+      }
+ }
+
+/***************
+MAPS
+***************/
+$colores:(
+/* clave:  valor*/
+    twitter:   #55acee,
+    facebook:  #3a5795,
+    mail:      #C25E30,
+    instagram: rgb(143, 52, 143),
+    youtube:   red,
+    snapchat:  yellow,
+    linkedin:  rgb(122, 165, 238)
+);
+//MAPS con each
+@each $name-color, $bgcolor in $colores {
+    .btn-#{$name-color} {
+        background-color: $bgcolor;
+        border: $bgcolor;
+    }
+ }
+
+ /* EXTENDS */
+.redsocial {
+    border: 1px #f00;
+    background-color: #fdd;
+    width: 100px;
+    height: 50px;
+    padding: 10px;
+    font-size: 15px;
+}
+.redsocial--dos {
+    @extend .redsocial;
+    border: #3a5795;
+}
+
+/* MIXINS*/
+@mixin tamanio($ancho, $altura) {
+    width: $ancho;
+    height: $altura;
+ }
+.caja{
+    @include tamanio(500px, 200px);
+}
+.caja--dos{
+    @include tamanio(700px, 400px)
+}
+ 
+/* BEM */
+/* BLOQUE = padre*/
+.fondoVerde {
+    background-color: green !important;
+}
+.fondoAzul {
+    background-color: blue !important;
+}
+.fondoCeleste {
+    background-color: deepskyblue !important;
+}
+.fondoRojo {
+    background-color: red !important;
+}
+.fondoNegro {
+    background-color: rgb(14, 13, 13) !important;
+}
+.borde {
+    border: 5px !important;
+}
+.fondoNegro {
+    background-color: black;
+}
+.fondoNaranja {
+    background-color: orange;
+}
+/* ELEMENTOS = hijo */
+.fondoVerde__chico {
+    background-color: bisque;
+}
+/* MODIFICADOR */
+.fondoVerde--negro {
+    border: solid 10px #e4dada;
+}
+.fondoVerde__chico--negro {
+    border: solid 15px #1a1a1a;
+}
+
+.centrado {
+    text-align: center;
+}
